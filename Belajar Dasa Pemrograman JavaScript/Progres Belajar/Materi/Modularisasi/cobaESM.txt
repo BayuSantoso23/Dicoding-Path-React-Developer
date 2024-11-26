@@ -1,0 +1,11 @@
+<!-- Demo to importing esm into html & using fallback in case -->
+<!-- The browser did not support it -->
+<script src="./esmodule.js" type="module">
+<script nomodule src="fallback.js"></script>
+
+<!-- Using inline to import esm -->
+
+<script type="module">
+  import App from "./app.js";
+  console.log(App);
+</script>
