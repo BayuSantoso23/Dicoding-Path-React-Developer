@@ -1,0 +1,1 @@
+(products.price * (discount / 100))
