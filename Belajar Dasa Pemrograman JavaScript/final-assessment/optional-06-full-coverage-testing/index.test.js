@@ -10,7 +10,7 @@ describe('Sum', () => {
         const actualValue = sum(num1, num2);
 
         const expectedValue = 19;
-        assert.equal(actualValue, expectedValue)
+        assert.equal(actualValue, expectedValue);
     });
 
     // Kondisi ketika dimana angka 1 atau 2 bukan bernilai angka
