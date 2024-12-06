@@ -9,7 +9,26 @@
  *   ```
  */
 
-class Item {}
+class Item {
+  constructor(id, name, quantity, price) {
+    this.id = id; // Properti id
+    this.name = name; // Properti name
+    this.quantity = quantity; // Properti quantity
+    this.price = price; // Properti price
+  }
+
+  // Method untuk mengubah nilai name, quantity, dan price
+  updateDetails(name, quantity, price) {
+    this.name = name;
+    this.quantity = quantity;
+    this.price = price;
+  }
+
+  // Method untuk mengembalikan informasi detail item
+  displayDetails() {
+    return `ID: ${this.id}, Name: ${this.name}, Quantity: ${this.quantity}, Price: ${this.price}`;
+  }
+}
 
 // Jangan hapus kode di bawah ini!
 export default Item;
