@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Bubbling World</title>
+    
+    <style>
+        .twoContent{
+          display: flex;
+          justify-content: space-between;
+        }
+        .dalam{
+            border: 2px solid;
+            width: 300px;
+            height: 100px;
+        }
+        .tengah{
+            border: 2px solid;
+            width: 400px;
+            height: 200px;
+        }
+        .luar{
+            border: 2px solid;
+            width: 500px;
+            height: 300px;
+        }
+        .langit{
+            border: 2px solid;
+            width: 600px;
+            height: 400px;
+        }
+    </style>        
+  </head>
+
+  
+  <body>
+    <div class="twoContent">
+      <!-- Event Bubbling -->
+      <!-- This events happens with the inside event get all the outer will also be called -->
+      <!-- Triggering from child (the one you clicked) to parent(The most outer one) -->
+       <div>
+        <h2>Event Bubbling</h2>
+        <div onclick="alert('ELEMEN LANGIT')" align="center" class="langit">
+          LANGIT
+          <div onclick="alert('ELEMEN LUAR')" align="center" class="luar">
+            LUAR
+            <div onclick="alert('ELEMEN TENGAH')" align="center" class="tengah">
+              TENGAH
+              <div onclick="alert('ELEMEN DALAM')" align="center" class="dalam">DALAM</div>
+            </div>
+          </div>
+        </div>
+       </div>
+      
+
+      <!-- Event Capturing -->
+      <!-- Opposite of bubbling -->
+      <div>
+        <h2>Event Capturing</h2>
+          <div align="center" id="langit" class="langit">
+            LANGIT
+            <div align="center" id="luar" class="luar">
+              LUAR
+              <div align="center" id="tengah" class="tengah">
+                TENGAH
+                <div align="center" id="dalam" class="dalam">DALAM</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    
+    <script>
+      const divs = document.getElementsByTagName('div');
+      for (let el of divs) {
+        el.addEventListener('click', function() {
+          alert('ELEMEN ' + el.getAttribute('id').toUpperCase());
+        }, true);
+      }
+        
+    </script>
+
+  </body>
+</html>
