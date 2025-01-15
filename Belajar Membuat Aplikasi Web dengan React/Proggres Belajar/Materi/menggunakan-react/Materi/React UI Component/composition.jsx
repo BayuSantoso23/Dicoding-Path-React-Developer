@@ -4,6 +4,8 @@
 // ProductCategoryRow (biru muda): Menampilkan heading untuk setiap kategori produk.
 // ProductRow (merah): Menampilkan item produk.
 
+import { createRoot } from 'react-dom/client';
+
 function SearchBar() {
     return (
       <div className="search-bar__container">
@@ -64,3 +66,6 @@ function SearchBar() {
       </div>
     );
   }
+
+const root = createRoot(document.getElementById('root'));
+root.render(FilterableProductTable);
