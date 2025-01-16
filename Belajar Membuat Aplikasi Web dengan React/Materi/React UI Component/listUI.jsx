@@ -25,7 +25,7 @@ function CardBody({date, title, content, link}) {
         <p>{date}</p>
         <h2>{title}</h2>
         <p>{content}</p>
-        <button link={link}/>
+        <Button link={link}/>
     </div>
   )
 }
