@@ -75,6 +75,11 @@ class CounterApp extends React.Component {
     render(){
         return (
             <div>
+                {/* metode (seperti onIncreaseEventHandler) tidak secara otomatis terikat ke instansi class. 
+                Agar bisa digunakan di dalam class itu sendiri, kita harus mengaksesnya melalui this. */}
+                {/* Apa yang Terjadi Jika Tidak Menggunakan this?
+                React tidak dapat menemukan variabel onIncreaseEventHandler di luar lingkup class.
+                JavaScript tidak akan tahu bahwa fungsi ini adalah metode dari class CounterApp. */}
                 <IncreaseButton increase={this.onIncreaseEventHandler} />
                 <CounterDisplay count={this.state.count} />
                 <ResetButton reset={this.onResetEventHandler} />
